@@ -1,5 +1,5 @@
 {
-  "name": "react-outside-click-handler",
+  "name": "react-outside-click-handler-lite",
   "version": "1.3.0",
   "description": "A React component for dealing with clicks outside its subtree",
   "main": "index.js",
@@ -28,14 +28,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/airbnb/react-outside-click-handler.git"
+    "url": "git+https://github.com/romellem/react-outside-click-handler.git"
   },
-  "author": "Maja Wichrowska <maja.wichrowska@airbnb.com>",
+  "contributors": [
+    "Maja Wichrowska <maja.wichrowska@airbnb.com>",
+    "Matthew Wade <matt.wade@designory.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/airbnb/react-outside-click-handler/issues"
+    "url": "https://github.com/romellem/react-outside-click-handler/issues"
   },
-  "homepage": "https://github.com/airbnb/react-outside-click-handler#readme",
+  "homepage": "https://github.com/romellem/react-outside-click-handler#readme",
   "devDependencies": {
     "airbnb-js-shims": "^2.2.0",
     "babel-cli": "^6.26.0",
