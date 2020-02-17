@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { addEventListener } from 'consolidated-events';
-import objectValues from 'object.values';
 
 import contains from 'document.contains';
 
@@ -15,12 +14,32 @@ const DISPLAY = {
   CONTENTS: 'contents',
 };
 
+// NOTE: Of course, using a `for..in` loop as a way to determine `Object.values`
+// doesn't work for every scenario. However, since we are merely creating a plain
+// object here without weird `getters` and such, we can use this to help with
+// verifying propTypes. Doing this rather than using an polyfill'd version of the
+// real `Object.values` (such as the 'object.values' lib) reduces our bundle by a
+// fair amount, which is enough to justify the (sometimes problematic) `for..in` here.
+const pseudoObjectValues = (obj) => {
+  const objValues = [];
+  /* eslint-disable no-restricted-syntax */
+  for (const val in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, val)) {
+      objValues.push(obj[val]);
+    }
+  }
+  /* eslint-enable no-restricted-syntax */
+
+  return objValues;
+};
+const DISPLAY_VALUES = pseudoObjectValues(DISPLAY);
+
 const propTypes = forbidExtraProps({
   children: PropTypes.node.isRequired,
   onOutsideClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   useCapture: PropTypes.bool,
-  display: PropTypes.oneOf(objectValues(DISPLAY)),
+  display: PropTypes.oneOf(DISPLAY_VALUES),
 });
 
 const defaultProps = {
@@ -125,7 +144,7 @@ export default class OutsideClickHandler extends React.Component {
       <div
         ref={this.setChildNodeRef}
         style={
-          display !== DISPLAY.BLOCK && objectValues(DISPLAY).includes(display)
+          display !== DISPLAY.BLOCK && DISPLAY_VALUES.includes(display)
             ? { display }
             : undefined
         }

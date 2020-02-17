@@ -1,11 +1,11 @@
-# react-outside-click-handler
+# react-outside-click-handler-lite
 
 > A React component for handling outside clicks
 
 ## Usage
 
 ```jsx
-import OutsideClickHandler from 'react-outside-click-handler';
+import OutsideClickHandler from 'react-outside-click-handler-lite';
 
 function MyComponent() {
   return (
