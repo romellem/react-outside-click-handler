@@ -1,5 +1,8 @@
 # Change Log
 
+## v2.0.1
+- [Docs] Documents the differences between this library and the original.
+
 ## v2.0.0
  - [Refactor] Replace `object.values` lib with "poor man's" polyfill. Reduces overall bundle size.
 
