@@ -1,6 +1,8 @@
 # react-outside-click-handler-lite
 
-> A React component for handling outside clicks
+A React component for handling outside clicks.
+
+> NOTE: This library is a fork of the excellent [airbnb/react-outside-click-handler](https://github.com/airbnb/react-outside-click-handler), and the source of this fork is nearly identical, except for one difference: this library does not use a `Object.values` polyfill, so its bundle size is reduced by nearly 75% ([14.3kb](https://bundlephobia.com/result?p=react-outside-click-handler) to [3.7kb](https://bundlephobia.com/result?p=react-outside-click-handler-lite) after gzip).
 
 ## Usage
 
