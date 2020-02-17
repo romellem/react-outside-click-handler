@@ -1,5 +1,8 @@
 # Change Log
 
+## v2.0.0
+ - [Refactor] Replace `object.values` lib with "poor man's" polyfill. Reduces overall bundle size.
+
 ## v1.3.0
  - [New] `display`: add `contents` (#34)
  - [New] `display`: add `inline` (#28)
